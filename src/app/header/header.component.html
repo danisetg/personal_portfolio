@@ -11,9 +11,8 @@
        </li>
      </ul>
      <ul class="menu">
-       <li class="menu-item">HOME</li>
-       <li class="menu-item">ABOUT</li>
-       <li class="menu-item">RESUME</li>
+       <li class="menu-item" (click)="scrollToView('#home', drawer)">HOME</li>
+       <li class="menu-item" (click)="scrollToView('#about', drawer); ">ABOUT</li>
        <li class="menu-item">PORTFOLIO</li>
        <li class="menu-item">CONTACT</li>
      </ul>
@@ -21,6 +20,7 @@
   <mat-sidenav-content>
 
       <button
+        style="position: fixed;"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button

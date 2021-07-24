@@ -17,6 +17,10 @@ export class HeaderComponent implements OnInit{
       shareReplay()
     );
 
+  homeElement = document.querySelector('#home');
+  aboutElement = document.querySelector('#about');
+
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
@@ -24,6 +28,17 @@ export class HeaderComponent implements OnInit{
       this.darkMode = false;
 
     document.getElementById('body')?.classList.add('dark-theme');
+
+    let observer = new IntersectionObserver( (entries) => {
+      if(entries[0].isIntersecting === true)
+		    console.log('Element has just become visible in screen');
+    });
+
+    if(this.homeElement) {
+      observer.observe(this.homeElement);
+      console.log("it exists!!!");
+    }
+
   }
 
   changeTheme() {
@@ -42,5 +57,21 @@ export class HeaderComponent implements OnInit{
     document.getElementById('body')?.classList.remove('dark-theme');
     document.getElementById('body')?.classList.add('light-theme');
   }
+
+  scrollToView(view: string, drawer: any) {
+    let element = document.querySelector(view);
+    element?.scrollIntoView();
+  }
+
+  isInViewport(el: any) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+
+    );
+}
 
 }
