@@ -1,0 +1,51 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  font-family: 'Open Sans';
+  font-size:1.5rem;
+  width: 18vw;
+  .menu {
+    margin-top: 20vh;
+    .menu-item {
+      margin-top: 5vh;
+    }
+  }
+  ul {
+    padding: 0px;
+    margin-top: 20px;
+
+    li {
+      text-align: center;
+      .logo {
+        width: 18vw;
+        margin-bottom: 15vh;
+      }
+      .mat-icon {
+        font-size: 25px;
+        vertical-align: middle;
+      }
+      .mat-slide-toggle {
+        vertical-align: middle;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content  {
+  display: block !important;
+  text-align: center !important;
+}

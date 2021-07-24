@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+//light colors
+$light-primary: mat-palette($mat-indigo);
+$light-accent: mat-palette($mat-yellow, A200, A100, A400);
+$light-warn: mat-palette($mat-red);
+
+//dark colors
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+
+// Custom Sass colors vars (will be available in all the project)
+$dark-primary-default: mat-color($dark-primary);
+$dark-accent-default: mat-color($dark-accent);
+$dark-warn-default: mat-color($dark-warn);
+
+
+// Create the theme object (a Sass map containing all of the palettes).
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+$dark-theme:  mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($light-theme);
+}

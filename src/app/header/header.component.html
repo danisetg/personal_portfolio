@@ -1,0 +1,34 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+     <ul>
+       <li>
+         <mat-icon>light_mode</mat-icon>
+         <mat-slide-toggle [(ngModel)]="darkMode" (change)="changeTheme()"></mat-slide-toggle>
+         <mat-icon>dark_mode</mat-icon>
+       </li>
+     </ul>
+     <ul class="menu">
+       <li class="menu-item">HOME</li>
+       <li class="menu-item">ABOUT</li>
+       <li class="menu-item">RESUME</li>
+       <li class="menu-item">PORTFOLIO</li>
+       <li class="menu-item">CONTACT</li>
+     </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
