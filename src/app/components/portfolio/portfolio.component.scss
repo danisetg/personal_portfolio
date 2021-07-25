@@ -1,0 +1,21 @@
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.project-img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.project {
+  width: 50%;
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+

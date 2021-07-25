@@ -25,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
 
 
 import { FormsModule } from '@angular/forms';
@@ -78,6 +79,7 @@ import { EducationComponent } from './components/education/education.component';
     MatListModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatCardModule,
 
     LayoutModule,
 

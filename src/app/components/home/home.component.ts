@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     const homeElement = document.querySelector('#HOME');
     const aboutElement = document.querySelector('#ABOUT');
+    const portfolioElement = document.querySelector('#PORTFOLIO');
 
     let options = {
       rootMargin: '0px',
@@ -33,9 +34,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, options);
 
 
-    if(homeElement && aboutElement) {
+    if(homeElement && aboutElement && portfolioElement) {
       observer.observe(homeElement);
       observer.observe(aboutElement);
+      observer.observe(portfolioElement);
     }
   }
 
