@@ -42,12 +42,11 @@
         text-decoration: none;
         color: inherit;
       }
-
-      .active {
-        text-decoration: underline dotted;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 4px;
-      }
+    }
+    .active {
+      text-decoration: underline dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
     }
   }
 }

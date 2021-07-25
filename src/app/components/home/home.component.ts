@@ -1,4 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { ActivateMenuItem } from 'src/app/store/actions/menu-item.actions';
+
 
 @Component({
   selector: 'app-home',
@@ -7,15 +10,15 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
 
   }
 
   ngAfterViewInit() {
-    const homeElement = document.querySelector('#home');
-    const aboutElement = document.querySelector('#about');
+    const homeElement = document.querySelector('#HOME');
+    const aboutElement = document.querySelector('#ABOUT');
 
     let options = {
       rootMargin: '0px',
@@ -24,9 +27,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     let observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-
           if(entry.isIntersecting)
-            console.log(entry.target);
+            this.store.dispatch(new ActivateMenuItem(entry.target.id));
       });
     }, options);
 
@@ -36,5 +38,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       observer.observe(aboutElement);
     }
   }
+
 
 }

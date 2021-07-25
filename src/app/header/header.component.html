@@ -11,10 +11,9 @@
        </li>
      </ul>
      <ul class="menu">
-       <li class="menu-item" (click)="scrollToView('#home', drawer)">HOME</li>
-       <li class="menu-item" (click)="scrollToView('#about', drawer); ">ABOUT</li>
-       <li class="menu-item">PORTFOLIO</li>
-       <li class="menu-item">CONTACT</li>
+      <li class="menu-item" [class.active]="menuItem.active"  *ngFor="let menuItem of menuItems | async" (click)="scrollToView('#' + menuItem.title, drawer)">
+        {{menuItem.title}}
+      </li>
      </ul>
   </mat-sidenav>
   <mat-sidenav-content>

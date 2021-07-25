@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { MenuItem } from '../models/menu-items.model';
+import { Store } from '@ngxs/store';
+import { AddMenuItem } from '../store/actions/menu-item.actions';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +14,7 @@ import { map, shareReplay } from 'rxjs/operators';
 export class HeaderComponent implements OnInit{
   title = 'portfolio';
   darkMode: boolean = true;
+  menuItems: Observable<MenuItem> | any;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -21,13 +25,21 @@ export class HeaderComponent implements OnInit{
   aboutElement = document.querySelector('#about');
 
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+              private store: Store) {
+
+                this.menuItems = this.store.select(state => state.menuItems.menuItems);
+
+                console.log(this.menuItems);
+
+              }
 
   ngOnInit() {
     if(localStorage.getItem('theme') == 'light')
       this.darkMode = false;
 
     document.getElementById('body')?.classList.add('dark-theme');
+
 
     let observer = new IntersectionObserver( (entries) => {
       if(entries[0].isIntersecting === true)
@@ -38,6 +50,8 @@ export class HeaderComponent implements OnInit{
       observer.observe(this.homeElement);
       console.log("it exists!!!");
     }
+
+   // this.store.dispatch(new AddMenuItem({title: 'HOME', active: true}));
 
   }
 

@@ -1,0 +1,13 @@
+<div fxLayout="row wrap" fxLayout.xs="column" style="margin-top: 20px;">
+
+  <div fxLayout="column" *ngFor="let attribute of attributes" fxFlex="25" fxFlex.xs="100" class="attribute" fxLayoutAlign="center center">
+
+      <mat-progress-spinner color="accent" strokeWidth="3"
+      [value]="attribute.value">
+      </mat-progress-spinner>
+      <div style="position:relative; top: -60px;">{{attribute.value}}%</div>
+      <span>{{attribute.title}}</span>
+  </div>
+
+</div>
+

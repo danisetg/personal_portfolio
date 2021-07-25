@@ -6,3 +6,63 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .container {
   margin: 20px;
 }
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 10px 10px 10px #999;
+
+}
+
+.description {
+  text-align: center;
+  margin: 10vh 5vw 5vw 10vh;
+
+  .hello {
+    font-family: 'Open Sans';
+    font-size:1.8rem;
+  }
+  .name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin-top: 30px;
+  }
+  .welcome {
+    font-family: 'Open Sans';
+    font-size: 1.8rem;
+    margin: 30px;
+  }
+  .content {
+    font-family: 'Open Sans';
+    font-size: 1.5rem;
+    margin: 30px;
+  }
+
+  .section-title {
+    font-size: 3rem;
+    margin: 30px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mat-tab-list {
+  overflow: hidden;
+  .mat-tab-labels {
+    .mat-tab-label {
+      font-size: 1.2rem;
+    }
+    .mat-tab-label-active {
+      opacity: 1;
+    }
+
+  }
+}
+
