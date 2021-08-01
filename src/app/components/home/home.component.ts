@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     const homeElement = document.querySelector('#HOME');
     const aboutElement = document.querySelector('#ABOUT');
     const portfolioElement = document.querySelector('#PORTFOLIO');
+    const contactElement = document.querySelector('#CONTACT');
 
     let options = {
       rootMargin: '0px',
@@ -34,10 +35,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }, options);
 
 
-    if(homeElement && aboutElement && portfolioElement) {
+    if(homeElement && aboutElement && portfolioElement && contactElement) {
       observer.observe(homeElement);
       observer.observe(aboutElement);
       observer.observe(portfolioElement);
+      observer.observe(contactElement);
     }
   }
 

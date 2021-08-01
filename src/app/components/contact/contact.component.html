@@ -1,4 +1,30 @@
-<div fxLayout="column" fxFlex="100" class="description">
+<div fxLayout="column" class="description">
   <hr style="width: 100%;">
-  <span class="section-title">Get in touch</span>
+  <span class="section-title">Let me know about you</span>
+
+  <span class="content">
+    If you want to get in touch with me, just fill the form below for sending me a message, or contact me through
+    <a href="https://www.linkedin.com/in/daniset-gonzalez-lima-95b943ab/" target="_blank">my linkedin profile</a>.
+    I'll be really happy to know about you.
+  </span>
+
 </div>
+<div fxLayout="column" fxLayoutAlign="center center">
+
+        <h2>Get in touch</h2>
+      <form class="contact-form" #contactForm="ngForm" (submit)="sendMessage(contactForm.value)">
+        <div fxLayout="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Your Email</mat-label>
+            <input matInput required name="email" ngModel>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Your Message</mat-label>
+           <textarea matInput required name="message" ngModel></textarea>
+        </mat-form-field>
+        <button class="send-button" mat-raised-button color="accent" type="submit">Send message</button>
+        </div>
+      </form>
+
+</div>
+

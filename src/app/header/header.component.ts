@@ -51,8 +51,6 @@ export class HeaderComponent implements OnInit{
       console.log("it exists!!!");
     }
 
-   // this.store.dispatch(new AddMenuItem({title: 'HOME', active: true}));
-
   }
 
   changeTheme() {
@@ -74,7 +72,7 @@ export class HeaderComponent implements OnInit{
 
   scrollToView(view: string, drawer: any) {
     let element = document.querySelector(view);
-    element?.scrollIntoView();
+    element?.scrollIntoView({behavior: 'smooth'});
   }
 
   isInViewport(el: any) {

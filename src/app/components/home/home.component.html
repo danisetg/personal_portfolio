@@ -1,27 +1,25 @@
 <div class="container" id="homepage">
-  <div fxLayout="row" fxLayout.xs="column" id="HOME">
-    <div fxLayout="column" fxFlex="35" fxFlex.xs="100">
-      <img src="assets/foto.jpeg" class="profile-img">
-    </div>
-    <div fxLayout="column" fxFlex="60" fxFlex.xs="100" class="description">
-        <span class="hello">Hello, I am</span>
-        <span class="name">Daniset González Lima</span>
-        <span class="welcome">Welcome to my portfolio</span>
-        <span class="content">
-          Here you will find some information about me and my professional career, and links to some projects I have built over the time
-          for enhancing my portfolio.
-        </span>
-        <span class="content">
-          This site is completely built with angular 12.
-        </span>
-    </div>
+
+  <div fxLayout="column" class="description" id="HOME">
+      <span class="hello">Hello, I am</span>
+      <span class="name">Daniset González Lima</span>
+      <span class="welcome">Welcome to my portfolio</span>
+      <span class="content">
+        Here you will find some information about me and my professional career, and links to some projects I have built over the time
+        for enhancing my portfolio.
+      </span>
+      <span class="content">
+        This site is completely built with angular for fronted and Ruby on Rails for backend.
+      </span>
   </div>
 
-  <div fxLayout="row" id="ABOUT">
-    <app-about></app-about>
-  </div>
 
-  <div fxLayout="row" id="PORTFOLIO">
-    <app-portfolio></app-portfolio>
-  </div>
+
+    <app-about id="ABOUT"></app-about>
+
+    <app-portfolio id="PORTFOLIO"></app-portfolio>
+
+
+    <app-contact id="CONTACT"></app-contact>
+
 </div>
