@@ -16,13 +16,19 @@
         <div fxLayout="column">
           <mat-form-field appearance="fill">
             <mat-label>Your Email</mat-label>
-            <input matInput required name="email" ngModel>
+            <input matInput required name="email" #email="ngModel" type="email" ngModel email>
+            <mat-error *ngIf="email.touched && email.hasError">
+              You must provide a valid email address
+            </mat-error>
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Your Message</mat-label>
-           <textarea matInput required name="message" ngModel></textarea>
+           <textarea matInput required name="message" #message="ngModel" ngModel></textarea>
+           <mat-error *ngIf="message.touched && message.hasError">
+            Message can't be empty
+          </mat-error>
         </mat-form-field>
-        <button class="send-button" mat-raised-button color="accent" type="submit">Send message</button>
+        <button class="send-button" mat-raised-button color="accent" [disabled]="contactForm.invalid" type="submit">Send message</button>
         </div>
       </form>
 

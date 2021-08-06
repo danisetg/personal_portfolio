@@ -65,3 +65,28 @@ html {
   }
 }
 
+.rectangle-border {
+  border: solid 1px;
+  max-width: 600px;
+  width: 100%;
+  padding: 10px;
+  margin: 20px;
+ 
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+}
+
+
+.center-content-horizontally {
+  display: flex;
+  justify-content: center;
+}
+
+

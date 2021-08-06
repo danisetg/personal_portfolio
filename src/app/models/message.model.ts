@@ -1,6 +1,5 @@
 
 export interface Message {
-  email: string,
-  name: string,
-  body: string
+  email?: string,
+  message?: string
 }

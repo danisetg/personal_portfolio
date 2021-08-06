@@ -1,78 +1,30 @@
+<button mat-icon-button mat-raised-button color="primary" (click)="createGroup()"><mat-icon >add</mat-icon></button>
+<div *ngIf="!loading">
+  <div *ngFor="let group of groups">
+    <div fxLayout="row" class="skill-header">
+      <h2>{{group.title}}</h2>
+      <button mat-icon-button mat-raised-button color="primary" (click)="createSkill(group)"><mat-icon >add</mat-icon></button>
+      <button mat-icon-button mat-raised-button color="accent" (click)="updateGroup(group)"><mat-icon >edit</mat-icon></button>
+      <button mat-icon-button mat-raised-button color="warn" (click)="onDeleteGroup(group)"><mat-icon >delete</mat-icon></button>
 
-<div fxLayout="row">
-  <h2>Technologies:</h2>
-</div>
-<div fxLayout="row wrap" fxLayout.xs="column">
-
-  <div fxLayout="column" *ngFor="let technology of technologies" fxFlex="25" fxFlex.xs="100" class="attribute" fxLayoutAlign="center center">
-
-        <span>{{technology.title}}</span>
-        <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
-          <mat-progress-bar color="accent" strokeWidth="3"
-          [value]="technology.value">
-          </mat-progress-bar>
-          <span style="margin-left: 5px;">{{technology.value}}%</span>
-        </div>
-  </div>
-
-</div>
-
-
-<div fxLayout="row">
-  <h2>Software Development Methodologies:</h2>
-</div>
-<div fxLayout="row wrap" fxLayout.xs="column">
-
-  <div fxLayout="column" fxFlex="33" fxFlex.xs="100" fxLayoutAlign="center center">
-        <span>Waterfall</span>
-        <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
-          <mat-progress-bar color="accent" strokeWidth="3"
-          [value]="75">
-          </mat-progress-bar>
-          <span style="margin-left: 5px;">75%</span>
-        </div>
-  </div>
-  <div fxLayout="column" fxFlex="33" fxFlex.xs="100" fxLayoutAlign="center center">
-    <span>SCRUM</span>
-    <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
-      <mat-progress-bar color="accent" strokeWidth="3"
-      [value]="85">
-      </mat-progress-bar>
-      <span style="margin-left: 5px;">85%</span>
     </div>
-  </div>
-  <div fxLayout="column" fxFlex="33" fxFlex.xs="100" fxLayoutAlign="center center">
-    <span>XP</span>
-    <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
-      <mat-progress-bar color="accent" strokeWidth="3"
-      [value]="80">
-      </mat-progress-bar>
-      <span style="margin-left: 5px;">80%</span>
-    </div>
-  </div>
-</div>
+    <div fxLayout="row wrap" fxLayout.xs="column">
 
-<div fxLayout="row">
-  <h2>Spoken Languages:</h2>
-</div>
-<div fxLayout="row wrap" fxLayout.xs="column">
+      <div fxLayout="column" *ngFor="let skill of group.skills" fxFlex="25" fxFlex.xs="100" class="attribute" fxLayoutAlign="center center">
 
-  <div fxLayout="column" fxFlex="33" fxFlex.xs="100" fxLayoutAlign="center center">
-        <span>Spanish</span>
-        <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
-          <mat-progress-bar color="accent" strokeWidth="3"
-          [value]="99">
-          </mat-progress-bar>
-          <span style="margin-left: 5px;">99%</span>
-        </div>
-  </div>
-  <div fxLayout="column" fxFlex="33" fxFlex.xs="100" fxLayoutAlign="center center">
-    <span>English</span>
-    <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
-      <mat-progress-bar color="accent" strokeWidth="3"
-      [value]="85">
-      </mat-progress-bar>
-      <span style="margin-left: 5px;">85%</span>
+            <span>
+              {{skill.name}}
+              <button mat-icon-button mat-raised-button color="accent" (click)="updateSkill(skill)"><mat-icon >edit</mat-icon></button>
+              <button mat-icon-button mat-raised-button color="warn" (click)="onDeleteSkill(skill)"><mat-icon >delete</mat-icon></button>
+
+            </span>
+            <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
+              <mat-progress-bar color="accent" strokeWidth="3"
+              [value]="skill.percent">
+              </mat-progress-bar>
+              <span style="margin-left: 5px;">{{skill.percent}}%</span>
+            </div>
+      </div>
     </div>
   </div>
 </div>

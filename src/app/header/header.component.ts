@@ -35,8 +35,12 @@ export class HeaderComponent implements OnInit{
               }
 
   ngOnInit() {
-    if(localStorage.getItem('theme') == 'light')
+
+    if(localStorage.getItem('theme') == 'light') {
       this.darkMode = false;
+      this.changeTheme();
+    }
+
 
     document.getElementById('body')?.classList.add('dark-theme');
 
@@ -54,6 +58,7 @@ export class HeaderComponent implements OnInit{
   }
 
   changeTheme() {
+
     if(this.darkMode)
       this.setDarkTheme();
     else
@@ -63,11 +68,13 @@ export class HeaderComponent implements OnInit{
   setDarkTheme() {
     document.getElementById('body')?.classList.remove('light-theme');
     document.getElementById('body')?.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark');
   }
 
   setLightTheme() {
     document.getElementById('body')?.classList.remove('dark-theme');
     document.getElementById('body')?.classList.add('light-theme');
+    localStorage.setItem('theme', 'light');
   }
 
   scrollToView(view: string, drawer: any) {

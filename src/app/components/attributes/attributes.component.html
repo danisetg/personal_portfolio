@@ -1,8 +1,9 @@
-<div fxLayout="row wrap" fxLayout.xs="column" style="margin-top: 20px;">
+<div class="center-content-horizontally">
+  <div fxLayout="row wrap" fxLayout.xs="column" class="attributes-list">
 
-  <div fxLayout="column"   *ngFor="let attribute of attributes" fxFlex="25" fxFlex.xs="100" class="attribute">
-      <li >{{attribute.title}}</li>
+    <div fxLayout="column" fxLayoutAlign="center center"   *ngFor="let attribute of attributes" fxFlex="30" fxFlex.xs="100" class="attribute">
+        <span class="badge">{{attribute.title}}</span>
+    </div>
   </div>
-
 </div>
 

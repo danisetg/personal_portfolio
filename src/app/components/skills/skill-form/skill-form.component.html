@@ -1,0 +1,11 @@
+<form #skillForm="ngForm" (submit)="onSubmit(skillForm.value)">
+  <div fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" [ngModel]="skill.name">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="number" max="100" matInput placeholder="Percent" name="percent" [ngModel]="skill.percent">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Create</button>
+  </div>
+</form>

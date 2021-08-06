@@ -1,0 +1,8 @@
+<form #groupForm="ngForm" (submit)="onSubmit(groupForm.value)">
+  <div fxLayout="column">
+    <mat-form-field>
+      <input matInput placeholder="Title" name="title" [ngModel]="group.title">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Create</button>
+  </div>
+</form>

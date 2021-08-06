@@ -3,19 +3,36 @@ a {
   color: inherit;
 }
 
-.project-img {
-  height: auto;
-  width: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-}
+
+
 
 .project {
-  width: 50%;
-  &:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+  max-width: 700px;
+  width: 100%;
+  margin: 20px;
+  min-height: 200px;
+  .project-image1 {
+    background: url('../../../assets/games.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .project-image2 {
+    background: url('../../../assets/math.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  .description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
-
-

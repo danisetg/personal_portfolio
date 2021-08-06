@@ -26,8 +26,19 @@ $dark-theme:  mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 .dark-theme {
   @include angular-material-theme($dark-theme);
+  .badge {
+    background-color: gray;
+    width: fit-content;
+    padding: 10px;
+  }
+  
 }
 
 .light-theme {
   @include angular-material-theme($light-theme);
+  .badge {
+    background-color: antiquewhite;
+    width: fit-content;
+    padding: 10px;
+  }
 }

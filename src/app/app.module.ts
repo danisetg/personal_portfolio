@@ -27,6 +27,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 import { FormsModule } from '@angular/forms';
@@ -40,6 +42,15 @@ import { AttributesComponent } from './components/attributes/attributes.componen
 import { SkillsComponent } from './components/skills/skills.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CreateSkillComponent } from './components/skills/create-skill/create-skill.component';
+import { UpdateSkillComponent } from './components/skills/update-skill/update-skill.component';
+import { SkillFormComponent } from './components/skills/skill-form/skill-form.component';
+import { GroupFormComponent } from './components/skills/group-form/group-form.component';
+import { UpdateGroupComponent } from './components/skills/update-group/update-group.component';
+import { CreateGroupComponent } from './components/skills/create-group/create-group.component';
+import { DeleteConfirmationComponent } from './dialogs/delete-confirmation/delete-confirmation.component';
+import { MessageConfirmationComponent } from './dialogs/message-confirmation/message-confirmation.component';
 
 
 @NgModule({
@@ -54,7 +65,15 @@ import { EducationComponent } from './components/education/education.component';
     AttributesComponent,
     SkillsComponent,
     ExperienceComponent,
-    EducationComponent
+    EducationComponent,
+    CreateSkillComponent,
+    UpdateSkillComponent,
+    SkillFormComponent,
+    GroupFormComponent,
+    UpdateGroupComponent,
+    CreateGroupComponent,
+    DeleteConfirmationComponent,
+    MessageConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +81,7 @@ import { EducationComponent } from './components/education/education.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
+    HttpClientModule,
 
     //ngxs
     NgxsModule.forRoot([
@@ -82,6 +102,8 @@ import { EducationComponent } from './components/education/education.component';
     MatProgressBarModule,
     MatCardModule,
     MatInputModule,
+    MatDialogModule,
+    MatChipsModule,
 
     LayoutModule,
 

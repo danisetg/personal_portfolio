@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteConfirmationComponent } from 'src/app/dialogs/delete-confirmation/delete-confirmation.component';
+import { Group } from 'src/app/models/group.model';
+import { Skill } from 'src/app/models/skill.model';
+import { GroupService } from 'src/app/services/api/group.service';
+import { SkillService } from 'src/app/services/api/skill.service';
+import { CreateGroupComponent } from './create-group/create-group.component';
+import { CreateSkillComponent } from './create-skill/create-skill.component';
+import { UpdateGroupComponent } from './update-group/update-group.component';
+import { UpdateSkillComponent } from './update-skill/update-skill.component';
 
 @Component({
   selector: 'app-skills',
@@ -6,24 +16,70 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
-  technologies = [
-    {title: 'C#', value: 70},
-    {title: 'Ruby', value: 70},
-    {title: 'Python', value: 90},
-    {title: 'HTML', value: 93},
-    {title: 'Javascript/Typescript', value: 95},
-    {title: 'CSS', value: 85},
-    {title: 'PHP', value: 80},
-    {title: 'Angular', value: 90},
-    {title: 'Nodejs', value: 85},
-    {title: 'Yii', value: 75},
-    {title: 'Ruby on Rails', value: 75},
-    {title: 'Relational Databases/SQL', value: 88},
-    {title: 'MongoDB', value: 70},
-  ]
-  constructor() { }
+  groups: Group[];
+  loading: boolean;
+  constructor(private groupService: GroupService,
+              private skillService: SkillService,
+              private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.getSkills();
+  }
+
+  getSkills() {
+    this.loading = true;
+    this.groupService.index().subscribe(groups => {
+        this.groups = groups;
+        this.loading = false;
+    });
+  }
+
+  createSkill(group: Group) {
+    this.dialog.open(CreateSkillComponent, {data: group}).afterClosed().subscribe(result => {
+      if(result)
+        this.getSkills();
+    });
+  }
+
+  updateSkill(skill: Skill) {
+    this.dialog.open(UpdateSkillComponent, {data: skill}).afterClosed().subscribe(result => {
+      if(result)
+        this.getSkills();
+    });
+  }
+
+  onDeleteSkill(skill: Skill) {
+    this.dialog.open(DeleteConfirmationComponent).afterClosed().subscribe(result => {
+      if(result) {
+        this.skillService.delete(skill.id).subscribe( () => {
+          this.getSkills();
+        });
+      }
+    });
+  }
+
+  createGroup() {
+    this.dialog.open(CreateGroupComponent).afterClosed().subscribe(result => {
+      if(result)
+        this.getSkills();
+    });
+  }
+
+  updateGroup(group: Group) {
+    this.dialog.open(UpdateGroupComponent, {data: group}).afterClosed().subscribe(result => {
+      if(result)
+        this.getSkills();
+    });
+  }
+
+  onDeleteGroup(group: Group) {
+    this.dialog.open(DeleteConfirmationComponent).afterClosed().subscribe(result => {
+      if(result) {
+        this.groupService.delete(group.id).subscribe( () => {
+          this.getSkills();
+        });
+      }
+    });
   }
 
 }

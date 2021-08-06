@@ -1,3 +1,4 @@
+
 <div fxLayout="column" fxFlex="100" class="description">
   <hr style="width: 100%;">
   <span class="section-title">Portfolio</span>
@@ -6,25 +7,35 @@
     <a href="https://www.digitalocean.com/" target="_blank">
       Digital Ocean</a> and all codes can be found in <a href="https://github.com/danisetg?tab=repositories" target="_blank">my github profile</a>.
   </p>
-
-  <div fxLayout="row wrap" fxLayout.xs="column">
-    <div fxLayout="column" fxFlex="50" fxLayoutAlign="center center" fxFlex.xs="100" style="cursor: pointer;">
-      <mat-card class="project">
-        <h1>Casual Games</h1>
-        <img src="assets/games.png" class="project-img">
-        <span>Techologies involved: Angular, html, typescript, css</span>
-      </mat-card>
-    </div>
-    <div fxLayout="column" fxFlex="50" fxLayoutAlign="center center" fxFlex.xs="100" style="cursor: pointer;">
-      <mat-card class="project">
-        <h1>Math Blog</h1>
-        <img src="assets/math.jpeg" class="project-img">
-        <span>Techologies involved: Nodejs, Angular, html, typescript, css</span>
-      </mat-card>
-    </div>
+  <div class="center-content-horizontally">
+    <mat-card  class="project" >
+      <div fxlayout="column" class="project-image1" fxHide.xs fxFlex="30"></div>
+        <div fxLayout="column" class="description" fxFlex="70" fxFlex.xs="100">
+          <span class="title">Casual Games</span>
+          <p>
+            This is a recopilation of casual known games, including: minesweeper, solitaire, solitaire spider,
+            accordion and carta blanca.
+          </p>
+          <p>
+            The only technology used for building it was angular.
+          </p>
+          <a href="https://dglimagames.digital" target="_blank">Watch project</a>
+        </div>
+    </mat-card>
   </div>
-
-
-
-
+  <div class="center-content-horizontally">
+    <mat-card  class="project" >
+      <div fxlayout="column" class="project-image2" fxHide.xs fxFlex="30"></div>
+        <div fxLayout="column" class="description" fxFlex="70" fxFlex.xs="100">
+          <span class="title">Math Blog</span>
+          <p>
+            This is a blog with math topics I have been adding in my free time
+          </p>
+          <p>
+            The frontend is built with <strong>angular</strong> while the backend is built with <strong>nodejs</strong>.
+          </p>
+          <a href="https://derivadadeeuler.com" target="_blank">Watch project</a>
+        </div>
+    </mat-card>
+  </div>
 </div>
