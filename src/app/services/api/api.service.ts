@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  api_url = "http://142.93.240.70:3000";
+  api_url = "https://api.danisetportfolio.online";
   resource: string;
   constructor(private httpClient: HttpClient) { }
 
