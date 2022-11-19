@@ -1,12 +1,7 @@
-<button mat-icon-button mat-raised-button color="primary" (click)="createGroup()"><mat-icon >add</mat-icon></button>
 <div *ngIf="!loading">
   <div *ngFor="let group of groups">
     <div fxLayout="row" class="skill-header">
       <h2>{{group.title}}</h2>
-      <button mat-icon-button mat-raised-button color="primary" (click)="createSkill(group)"><mat-icon >add</mat-icon></button>
-      <button mat-icon-button mat-raised-button color="accent" (click)="updateGroup(group)"><mat-icon >edit</mat-icon></button>
-      <button mat-icon-button mat-raised-button color="warn" (click)="onDeleteGroup(group)"><mat-icon >delete</mat-icon></button>
-
     </div>
     <div fxLayout="row wrap" fxLayout.xs="column">
 
@@ -14,8 +9,6 @@
 
             <span>
               {{skill.name}}
-              <button mat-icon-button mat-raised-button color="accent" (click)="updateSkill(skill)"><mat-icon >edit</mat-icon></button>
-              <button mat-icon-button mat-raised-button color="warn" (click)="onDeleteSkill(skill)"><mat-icon >delete</mat-icon></button>
 
             </span>
             <div fxLayout="row" style="width: 80%;" fxLayoutAlign="center center">
